@@ -74,7 +74,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     { KC_##k0C,KC_##k1C,KC_##k2C,KC_##k3C,KC_##k4C,KC_##k5C},   \
     { KC_##k0D,KC_##k1D,KC_##k2D,KC_##k3D,KC_##k4D,KC_NO   }    \
    }
-
+#define KEYMAP_SLOWBAD 1
 #if defined(KEYMAP_DVORAK)
 #include "keymap_dvorak.h"
 #elif defined(KEYMAP_COLEMAK)
@@ -85,6 +85,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "keymap_micro.h"
 #elif defined(KEYMAP_CUB)
 #include "keymap_cub.h"
+#elif defined(KEYMAP_SLOWBAD)
+#include "keymap_slowbad.h"
 #else
 
 static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -218,7 +220,7 @@ uint8_t keymap_key_to_keycode(uint8_t layer, keypos_t key)
     }
 }
 
-#if defined(KEYMAP_CUB)
+#if defined(KEYMAP_SLOWBAD)
 
 // function keymap_fn_to_action will be defined in keymap_cub.h
 
